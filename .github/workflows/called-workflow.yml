@@ -25,3 +25,4 @@ jobs:
          echo "VAR-A: ${{ inputs.var_a }}"
          echo "VAR-B: ${{ inputs.var_b }}"
          echo "SECRET: ${{ secrets.token }}"
+         echo "this is added after setting up all the required workflow configuration and to check modification in required workflow syntax"
