@@ -1,0 +1,27 @@
+name: Reusable workflow example
+
+on:
+  workflow_call:
+    inputs:
+      var-a:
+        required: true
+        type: string
+      var-b:
+        required: true
+        type: string
+    secrets:
+      token:
+        required: false
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@master
+    - name: Print input vars
+      id: printinputvars
+      run: |
+         echo "::set-env name=VAR-A::${{ inputs.var-a }}"
+         echo "::set-env name=VAR-B::${{ inputs.var-b }}"
+         echo "::set-env name=VAR-SECRET::${{ secrets.token }}"
