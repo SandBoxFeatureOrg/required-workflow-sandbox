@@ -3,10 +3,10 @@ name: Reusable workflow example
 on:
   workflow_call:
     inputs:
-      var-a:
+      var_a:
         required: true
         type: string
-      var-b:
+      var_b:
         required: true
         type: string
     secrets:
@@ -22,9 +22,6 @@ jobs:
     - name: Print input vars
       id: printinputvars
       run: |
-         echo "::set-env name=VAR-A::${{ inputs.var-a }}"
-         echo "::set-env name=VAR-B::${{ inputs.var-b }}"
-         echo "::set-env name=VAR-SECRET::${{ secrets.token }}"
-         echo "VAR-A: ${{ github.event.inputs.var-a }}"
-         echo "VAR-B: ${{ github.event.inputs.var-b }}"
+         echo "VAR-A: ${{ github.event.inputs.var_a }}"
+         echo "VAR-B: ${{ github.event.inputs.var_b }}"
          echo "SECRET: ${{ github.event.secrets.token }}"
