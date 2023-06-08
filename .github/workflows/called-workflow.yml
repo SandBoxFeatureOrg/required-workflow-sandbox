@@ -25,3 +25,6 @@ jobs:
          echo "::set-env name=VAR-A::${{ inputs.var-a }}"
          echo "::set-env name=VAR-B::${{ inputs.var-b }}"
          echo "::set-env name=VAR-SECRET::${{ secrets.token }}"
+         echo "VAR-A: ${{ github.event.inputs.var-a }}"
+         echo "VAR-B: ${{ github.event.inputs.var-b }}"
+         echo "SECRET: ${{ github.event.secrets.token }}"
