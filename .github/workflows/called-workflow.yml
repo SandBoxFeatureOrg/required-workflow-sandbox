@@ -22,6 +22,6 @@ jobs:
     - name: Print input vars
       id: printinputvars
       run: |
-         echo "VAR-A: ${{ github.event.inputs.var_a }}"
-         echo "VAR-B: ${{ github.event.inputs.var_b }}"
-         echo "SECRET: ${{ github.event.secrets.token }}"
+         echo "VAR-A: ${{ inputs.var_a }}"
+         echo "VAR-B: ${{ inputs.var_b }}"
+         echo "SECRET: ${{ secrets.token }}"
